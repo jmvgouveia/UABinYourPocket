@@ -23,10 +23,5 @@ Tópicos sequenciais:
 
 Equipa: While(True) Cry();
 
-Membros:
-Bruno Eusébio
-Daniel Silva
-Jorge Gouveia
-Ricardo Sanches
-Sara Pinheiro
+Membros: Bruno Eusébio, Daniel Silva , Jorge Gouveia, Ricardo Sanches, Sara Pinheiro
 
