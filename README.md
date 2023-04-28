@@ -6,6 +6,7 @@
 <p align="center">
 UAB In Your Pocket
 <p>
+<br>
 Projeto no ambito da cadeira 21179 - Laboratório de Desenvolvimento de Software
 UAB - Universidade Aberta
 
@@ -29,7 +30,12 @@ Tópicos sequenciais:
 
 Equipa: While(True) Cry();
 
-Membros: Bruno Eusébio, Daniel Silva , Jorge Gouveia, Ricardo Sanches, Sara Pinheiro
+Membros: 
+<br>Bruno Eusébio 
+<br>Daniel Silva 
+<br>Jorge Gouveia
+<br>Ricardo Sanches
+<br>Sara Pinheiro
 
 
 <p align="center">
