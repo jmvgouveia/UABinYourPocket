@@ -26,3 +26,4 @@ Equipa: While(True) Cry();
 Membros: Bruno Eusébio, Daniel Silva , Jorge Gouveia, Ricardo Sanches, Sara Pinheiro
 
 
+![Untitled-1](https://user-images.githubusercontent.com/92897456/235264127-954bd3c9-0546-499e-b052-a233d83e0084.jpg)
