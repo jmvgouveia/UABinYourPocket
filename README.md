@@ -1,3 +1,9 @@
+
+<p align="center">
+  <img width="300" height="300" src="https://user-images.githubusercontent.com/92897456/235264584-e3ee91a4-366a-4745-b0f3-dd705830f7b0.svg">
+</p>
+
+
 UAB In Your Pocket
 
 Projeto no ambito da cadeira 21179 - Laboratório de Desenvolvimento de Software
