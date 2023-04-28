@@ -25,4 +25,4 @@ Equipa: While(True) Cry();
 
 Membros: Bruno Eusébio, Daniel Silva , Jorge Gouveia, Ricardo Sanches, Sara Pinheiro
 
-![Simulator Screen Shot - iPhone 14 Pro Max - 2023-04-28 at 23 19 20](https://user-images.githubusercontent.com/92897456/235263374-b49a081d-f48d-4a2c-be43-daad9de9ad13.png)
+
