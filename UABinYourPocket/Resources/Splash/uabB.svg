@@ -1,0 +1,31 @@
+<svg id="Black" xmlns="http://www.w3.org/2000/svg" width="1900" height="1900" viewBox="0 0 1900 1900">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-size: 312.5px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        text-anchor: middle;
+        font-family: Palatino;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        font-size: 625px;
+      }
+
+      .cls-4 {
+        font-size: 125px;
+      }
+    </style>
+  </defs>
+  <rect id="Rectangle_1_copy" data-name="Rectangle 1 copy" class="cls-1" x="327" y="905" width="1247" height="122"/>
+  <text id="POCKET" class="cls-2" x="948.216" y="1265.17"><tspan x="948.216">POCKET</tspan></text>
+  <text id="UAB" class="cls-3" x="959.295" y="881.661"><tspan x="959.295">UAB</tspan></text>
+  <text id="IN_YOUR" data-name="IN YOUR" class="cls-4" x="951.115" y="1007.505"><tspan x="951.115">IN YOUR</tspan></text>
+</svg>

@@ -1,0 +1,28 @@
+<svg id="White" xmlns="http://www.w3.org/2000/svg" width="1900" height="1900" viewBox="0 0 1900 1900">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 312.5px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        text-anchor: middle;
+        font-family: Palatino;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        font-size: 625px;
+      }
+
+      .cls-3 {
+        font-size: 125px;
+        fill: #fefefe;
+      }
+    </style>
+  </defs>
+  <rect x="326" y="906" width="1247" height="122"/>
+  <text id="POCKET" class="cls-1" x="949.215" y="1272.17"><tspan x="949.215">POCKET</tspan></text>
+  <text id="UAB" class="cls-2" x="960.294" y="888.662"><tspan x="960.294">UAB</tspan></text>
+  <text id="IN_YOUR" data-name="IN YOUR" class="cls-3" x="952.115" y="1014.505"><tspan x="952.115">IN YOUR</tspan></text>
+</svg>
