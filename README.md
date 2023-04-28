@@ -27,7 +27,7 @@ Membros: Bruno Eusébio, Daniel Silva , Jorge Gouveia, Ricardo Sanches, Sara Pin
 
 
 <p align="center">
-  <img width="460" height="300" src="![Untitled-12](https://user-images.githubusercontent.com/92897456/235264222-848a6778-88c3-469a-9078-35b72e86d8be.png)">
+![Untitled-12](https://user-images.githubusercontent.com/92897456/235264222-848a6778-88c3-469a-9078-35b72e86d8be.png)
 </p>
 
 
