@@ -34,13 +34,8 @@ Membros:
 <br>Bruno Eusébio 
 <br>Daniel Silva 
 <br>Jorge Gouveia
-<br>Ricardo Sanches
 <br>Sara Pinheiro
 
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/92897456/235264222-848a6778-88c3-469a-9078-35b72e86d8be.png">
-</p>
 
 
 
