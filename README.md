@@ -4,6 +4,16 @@
 </p>
 
 <p align="center">
+  <img width="300" height="300" src="https://github.com/jmvgouveia/UABinYourPocket/assets/92897456/6a36673a-3d5c-4e2c-914c-adbf5b384eaf">
+  <img width="300" height="300" src="https://github.com/jmvgouveia/UABinYourPocket/assets/92897456/f1ca81db-bd05-437b-b185-1b4f5fbcdb71">
+  <img width="300" height="300" src="https://github.com/jmvgouveia/UABinYourPocket/assets/92897456/acfd17c9-ce50-43b6-8abf-0fd723e391bf">
+  <img width="300" height="300" src="https://github.com/jmvgouveia/UABinYourPocket/assets/92897456/867f6044-d820-4d49-95f0-ffae2ad5c622">
+  <img width="300" height="300" src="https://github.com/jmvgouveia/UABinYourPocket/assets/92897456/f15bc0ac-29d9-4c53-a0f9-8098f88fb7c6">
+</p>
+
+
+
+<p align="center">
 UAB In Your Pocket
 <p>
 <br>
