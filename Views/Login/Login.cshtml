@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/UABinYourPocket.styles.css" asp-append-version="true" />
+</head>
+
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h1>Registar</h1>
+            <br />
+     
+            <input type="text" placeholder="Nome" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button>Entrar</button>
+            <br />
+            <a class="Button" asp-controller="Home" asp-action="Index" role="button">Voltar</a>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Entrar</h1>
+            <br />
+        
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <a href="#">Esqueceu a password?</a>
+            <button>Entrar</button>
+            <br />
+            <a class="Button" asp-controller="Home" asp-action="Index" role="button">Voltar</a>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Bem vindo de Volta!</h1>
+                <p>Faça o login com suas informações pessoais</p>
+                <button class="ghost" id="signIn">Entrar</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Olá, UABiano!</h1>
+                <p>Introduz os teus dados pessoais e comece a organizar a tua vida!</p>
+                <button class="ghost" id="signUp">Registar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
