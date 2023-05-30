@@ -17,7 +17,14 @@ namespace TesteASP.Controllers
                 model.LoginEfetuado += ExecutarVerificacaoLogin;
         }
 
-        public void ExecutarVerificacaoLogin(object sender, UtilizadorModel utilizador)
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+
+
+            public void ExecutarVerificacaoLogin(object sender, UtilizadorModel utilizador)
         {
             
         }
