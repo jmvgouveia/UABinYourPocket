@@ -22,7 +22,7 @@ UAB - Universidade Aberta
 
 Descrição: 
 
-App de gestão pessoal dos alunos para a Uab, utilizando C# em .NET Multi-platform App UI (.NET MAUI).
+App de gestão pessoal dos alunos para a Uab, utilizando C# em .ASP.NET
 Os dados são alojados em SQLite localmente, o que permite que o aluno possa em modo offline fazer a sua gestão. 
 Em relação ao modo de impressão iremos utilizar a API - PDFSharp para criar os relatórios a imprimir.
 
