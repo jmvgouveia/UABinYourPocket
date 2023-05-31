@@ -5,6 +5,7 @@
         public int? IDUtilizador { get; set; }
         public string? Login { get; set; }
         public string? Password { get; set; }
+        public int IDAluno { get; set; }
 
         public UtilizadorModel() : base() { }
 

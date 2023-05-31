@@ -122,7 +122,6 @@ namespace TesteASP.Models
             return dt;
         }
 
-
         #region Métodos & Funções da Tabela Utilizadores
 
         /// <summary>
@@ -133,7 +132,7 @@ namespace TesteASP.Models
         /// <param name="idAluno">ID do Aluno</param>
         public static void AdicionarNovoUtilizador(string login, string password, int idAluno)
         {
-            string insertString = $"INSERT INTO utilizadores (nome, password, id_aluno) VALUES('{login}', '{password}', {idAluno});";
+            string insertString = $"INSERT INTO utilizadores (login, password, id_aluno) VALUES('{login}', '{password}', {idAluno});";
 
             using var connection = new SQLiteConnection(ConnectionString);
 
@@ -163,12 +162,37 @@ namespace TesteASP.Models
 
             return dtAux;
         }
+
+        public static bool VerificarLogin(string login, string pw)
+        {
+            string sql = $"SELECT " +
+                            $"CASE " +
+                                $"WHEN EXISTS(SELECT * " +
+                                            $"FROM utilizadores AS u " +
+                                            $"WHERE u.login = '{login}' AND u.password = '{pw}') " +
+                                $"THEN 1 " +
+                                $"ELSE 0 " +
+                        $"END";
+            using var connection = new SQLiteConnection(ConnectionString);
+
+            connection.Open();
+
+            SQLiteCommand cmd;
+
+            cmd = connection.CreateCommand();
+            cmd.CommandText = sql;
+            bool resultado = Convert.ToBoolean(cmd.ExecuteScalar());
+            
+            connection.Close();
+
+            return resultado;
+        }
         #endregion
 
         #region Métodos & Funções da Tabela Alunos
-        public static void AdicionarNovoAluno(string nome, DateOnly data_nascimento,
-                                       string morada, string codPostal,
-                                       int nif, int contacto, string pais, string email)
+        public static void AdicionarNovoAluno(string nome, DateOnly data_nascimento, 
+                                              string morada, string codPostal, 
+                                              int nif, int contacto, string pais, string email)
         {
             string insertString = "INSERT OR IGNORE INTO alunos (nome, data_nascimento, morada, codigo_postal, nif, contacto, pais, email) " +
                                         $"VALUES('{nome}', '{data_nascimento:yyyy-MM-dd}', '{morada}', '{codPostal}', {nif}, {contacto}, '{pais}', '{email}');";
@@ -196,6 +220,7 @@ namespace TesteASP.Models
 
             return dtAux;
         }
+
         #endregion
 
     }

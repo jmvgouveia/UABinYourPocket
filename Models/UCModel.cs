@@ -11,8 +11,9 @@
         public DateTime EFolioA { get; set; }
         public DateTime EFolioB { get; set; }
         public DateTime EFolioGlobal { get; set; }
+        public bool Ativa { get; set; } 
 
-        public UCModel(int id, string nome, string sigla, int escts, int ano, int semestre, DateTime efolioA, DateTime efolioB, DateTime efolioGlobal)
+        public UCModel(int id, string nome, string sigla, int escts, int ano, int semestre, DateTime efolioA, DateTime efolioB, DateTime efolioGlobal, bool ativa = true)
         {
             this.ID = id;
             this.Nome = nome;
@@ -23,6 +24,8 @@
             this.EFolioA = efolioA;
             this.EFolioB = efolioB;
             this.EFolioGlobal = efolioGlobal;
+            this.Ativa = ativa;
+
         }
     }
 }

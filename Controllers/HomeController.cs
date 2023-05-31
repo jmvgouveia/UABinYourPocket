@@ -15,9 +15,11 @@ namespace TesteASP.Controllers
 
             SQLiteModel.IniciarTabelas();
 
-            SQLiteModel.AdicionarNovoAluno("Daniel", new DateOnly(1993, 1, 21), "Maiorga", "2460-819", 123456789, 911111111, "Portugal", "daniel@mail.com");
-
+            SQLiteModel.AdicionarNovoAluno("Daniel", new DateOnly(1993, 1, 21), "Maiorga", "2460-819", 123456789, 911111111, "Portugal", "teste@mail.com");
+            SQLiteModel.AdicionarNovoUtilizador("teste@mail.com", "1212", 1);
             DataTable dtAux = SQLiteModel.ObterDadosAluno(1);
+
+            //Util.Utilizador = null;
 
             if (dtAux != null && dtAux.Rows.Count > 0)
             {
@@ -27,18 +29,14 @@ namespace TesteASP.Controllers
                                                   (string)row["morada"], (string)row["codigo_postal"], (int)row["nif"], 
                                                   (int)row["contacto"], (string)row["pais"], (string)row["email"]);
 
-                var t1 = 0;
             }
 
-            var teste = 0;
         }
 
         public IActionResult Index()
         {
             return View();
         }
-
-      
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

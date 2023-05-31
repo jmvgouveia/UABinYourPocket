@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Login";
 }
+@model LoginModel
 
 <head>
     <meta charset="utf-8" />
@@ -26,14 +27,14 @@
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form method="post" asp-controller="Login" asp-action="EfetuarLogin">
             <h1>Entrar</h1>
             <br />
         
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="email" placeholder="Email" asp-for="email"/>
+            <input type="password" placeholder="Password" asp-for="pw"/>
             <a href="#">Esqueceu a password?</a>
-            <button>Entrar</button>
+            <button onclick="location.href='@Url.Action("EfetuarLogin", "Login")'">Entrar</button>
             <br />
             <a class="Button" asp-controller="Home" asp-action="Index" role="button">Voltar</a>
         </form>
