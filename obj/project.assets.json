@@ -99,29 +99,21 @@
           }
         }
       },
-      "PDFsharp/1.50.5147": {
+      "PdfSharpCore/1.3.56": {
         "type": "package",
+        "dependencies": {
+          "SharpZipLib": "1.3.3",
+          "SixLabors.Fonts": "1.0.0-beta17",
+          "SixLabors.ImageSharp": "1.0.4"
+        },
         "compile": {
-          "lib/net20/PdfSharp.Charting.dll": {
-            "related": ".xml"
-          },
-          "lib/net20/PdfSharp.dll": {
-            "related": ".Charting.xml;.xml"
-          }
+          "lib/net6.0/PdfSharpCore.dll": {}
         },
         "runtime": {
-          "lib/net20/PdfSharp.Charting.dll": {
-            "related": ".xml"
-          },
-          "lib/net20/PdfSharp.dll": {
-            "related": ".Charting.xml;.xml"
-          }
+          "lib/net6.0/PdfSharpCore.dll": {}
         },
         "resource": {
-          "lib/net20/de/PdfSharp.Charting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net20/de/PdfSharp.resources.dll": {
+          "lib/net6.0/de/PdfSharpCore.resources.dll": {
             "locale": "de"
           }
         }
@@ -158,6 +150,45 @@
           "runtimes/win-x86/native/sni.dll": {
             "assetType": "native",
             "rid": "win-x86"
+          }
+        }
+      },
+      "SharpZipLib/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SixLabors.Fonts/1.0.0-beta17": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/1.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -639,21 +670,24 @@
         "version.txt"
       ]
     },
-    "PDFsharp/1.50.5147": {
-      "sha512": "vr5KBIqcXu2hqZ43UTwPR+jqHgMrT5tsPtJvEF+mORKoBNMh3bRWgAwic0U1sT2IVb4PR5m0GyQxnmCz8jBHWg==",
+    "PdfSharpCore/1.3.56": {
+      "sha512": "722Df/czLsmO3sqXLJ/rRg19a5NzkFds3WX6UuMGJ9KTDfthnV87uuGII+E9kp7iJx5XjdaiHv5Ky+jZmRxeIQ==",
       "type": "package",
-      "path": "pdfsharp/1.50.5147",
+      "path": "pdfsharpcore/1.3.56",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net20/PdfSharp.Charting.dll",
-        "lib/net20/PdfSharp.Charting.xml",
-        "lib/net20/PdfSharp.dll",
-        "lib/net20/PdfSharp.xml",
-        "lib/net20/de/PdfSharp.Charting.resources.dll",
-        "lib/net20/de/PdfSharp.resources.dll",
-        "pdfsharp.1.50.5147.nupkg.sha512",
-        "pdfsharp.nuspec"
+        "LICENSE.md",
+        "lib/net5.0/PdfSharpCore.dll",
+        "lib/net5.0/de/PdfSharpCore.resources.dll",
+        "lib/net6.0/PdfSharpCore.dll",
+        "lib/net6.0/de/PdfSharpCore.resources.dll",
+        "lib/netcoreapp3.1/PdfSharpCore.dll",
+        "lib/netcoreapp3.1/de/PdfSharpCore.resources.dll",
+        "lib/netstandard2.0/PdfSharpCore.dll",
+        "lib/netstandard2.0/de/PdfSharpCore.resources.dll",
+        "pdfsharpcore.1.3.56.nupkg.sha512",
+        "pdfsharpcore.nuspec"
       ]
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
@@ -717,6 +751,69 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "SharpZipLib/1.3.3": {
+      "sha512": "N8+hwhsKZm25tDJfWpBSW7EGhH/R7EMuiX+KJ4C4u+fCWVc1lJ5zg1u3S1RPPVYgTqhx/C3hxrqUpi6RwK5+Tg==",
+      "type": "package",
+      "path": "sharpziplib/1.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/sharpziplib-nuget-256x256.png",
+        "lib/net45/ICSharpCode.SharpZipLib.dll",
+        "lib/net45/ICSharpCode.SharpZipLib.pdb",
+        "lib/net45/ICSharpCode.SharpZipLib.xml",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.pdb",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.xml",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.pdb",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.xml",
+        "sharpziplib.1.3.3.nupkg.sha512",
+        "sharpziplib.nuspec"
+      ]
+    },
+    "SixLabors.Fonts/1.0.0-beta17": {
+      "sha512": "qubgVovAoSR7vyv9tJ68gSzRIPWz7HBjTM9rwAaLjpcJ6T50arnX+GHAZcC0r2mVagyRMknCNda3DGoe8StUUQ==",
+      "type": "package",
+      "path": "sixlabors.fonts/1.0.0-beta17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/SixLabors.Fonts.dll",
+        "lib/netcoreapp3.1/SixLabors.Fonts.xml",
+        "lib/netstandard2.0/SixLabors.Fonts.dll",
+        "lib/netstandard2.0/SixLabors.Fonts.xml",
+        "lib/netstandard2.1/SixLabors.Fonts.dll",
+        "lib/netstandard2.1/SixLabors.Fonts.xml",
+        "sixlabors.fonts.1.0.0-beta17.nupkg.sha512",
+        "sixlabors.fonts.128.png",
+        "sixlabors.fonts.nuspec"
+      ]
+    },
+    "SixLabors.ImageSharp/1.0.4": {
+      "sha512": "H2rPiEr2ddBOltOuqRYhpLBAsQXDAhbzMMhhuksnBG2oefup1MXMchALe7yYkKJksNbtxbZHKeM6dn/68I75qw==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/SixLabors.ImageSharp.dll",
+        "lib/net472/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.xml",
+        "lib/netstandard1.3/SixLabors.ImageSharp.dll",
+        "lib/netstandard1.3/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.0/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.0/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.1/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.1/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.1.0.4.nupkg.sha512",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.nuspec"
       ]
     },
     "Stub.System.Data.SQLite.Core.NetStandard/1.0.117": {
@@ -1255,29 +1352,29 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "PdfSharp >= 1.50.5147",
+      "PdfSharpCore >= 1.3.56",
       "System.Data.SQLite >= 1.0.117",
       "System.Data.SQLite.Core >= 1.0.117"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\j.gouveia\\.nuget\\packages\\": {},
+    "C:\\Users\\Windows\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\j.gouveia\\Source\\Repos\\UABinYourPocket\\TesteASP.csproj",
+      "projectUniqueName": "C:\\Users\\Windows\\Source\\Repos\\novobranch\\TesteASP.csproj",
       "projectName": "TesteASP",
-      "projectPath": "C:\\Users\\j.gouveia\\Source\\Repos\\UABinYourPocket\\TesteASP.csproj",
-      "packagesPath": "C:\\Users\\j.gouveia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\j.gouveia\\Source\\Repos\\UABinYourPocket\\obj\\",
+      "projectPath": "C:\\Users\\Windows\\Source\\Repos\\novobranch\\TesteASP.csproj",
+      "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Windows\\Source\\Repos\\novobranch\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\j.gouveia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Windows\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1305,9 +1402,9 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "PdfSharp": {
+          "PdfSharpCore": {
             "target": "Package",
-            "version": "[1.50.5147, )"
+            "version": "[1.3.56, )"
           },
           "System.Data.SQLite": {
             "target": "Package",
@@ -1337,20 +1434,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.300-preview.23122.5\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "O pacote 'PDFsharp 1.50.5147' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "libraryId": "PDFsharp",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }
