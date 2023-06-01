@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "UABinYourPocket";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @*<title>@ViewData["Title"] - UABinYourPocket</title>*@
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/UABinYourPocket.styles.css" asp-append-version="true" />
+</head>
+
+
+
+
+<div class="landing-page">
+    <header>
+        <div class="container">
+
+            <a> While(<b>True</b>) Cry();</a>
+            <ul class="links">
+                <li><a asp-controller="Home" asp-action="Index">Inicio</a></li>
+                <li><a asp-controller="UnidadesCurriculares" asp-action="UnidadesCurriculares">Unidades Curriculares</a></li>
+                <li> <a asp-controller="Calendario" asp-action="Calendario">Calendário</a></li>
+                <li>
+                    @if (TempData["User"] != null)
+                    {
+                        @TempData["User"]
+                        TempData.Keep("User");
+                    }
+                    else
+                    {
+                        <button onclick="location.href='@Url.Action("Login", "Login")'">Login</button>
+
+                    }
+                </li>
+
+         @*       @if (TempData["User"] != null)
+                {
+                    <li>
+                        <button onclick="@TempData.Remove("User")">Logout</button>
+                    </li>
+                }*@
+
+
+
+            </ul>
+
+        </div>
+    </header>
+    <div class="content">
+
+        <h2>Inscrever </h2>
+        <br />
+        
+        <a>Deseja se increver nesta Unidade Curricular ?</a>
+        <br />
+        <br />
+        <h3> nome da uc</h3>
+        <br />
+        <center><div class="btn-group" role="group" aria-label="Basic example">
+            <a role="button" class="btn btn-primary" >Sim</a> @*asp-route-id="@uc.ID"*@
+            <a role="button" class="btn btn-danger" >Não</a> @*asp-route-id="@uc.ID"*@
+            </div>
+        </center>
+        <br />
+        <br />
+        <center><a class="btn btn-primary" asp-controller="UnidadesCurriculares" asp-action="UnidadesCurriculares" role="button">Voltar</a></center>
+        <br />
+        <br />
+    </div>
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        <div class="text-center">
+
+            &copy; 2023 - UABinYourPocket - While(True) Cry();
+        </div>
+    </div>
+</footer>
+
+
+
+
+

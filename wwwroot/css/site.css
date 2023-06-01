@@ -52,6 +52,29 @@ button {
     background-color: #00b4d8;
 }
 
+button1 {
+    border: 0;
+    border-radius: 20px;
+    padding: 5px 30px;
+    margin-left: 10px;
+    margin-top: 0px;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #00b4d8;
+}
+
+.button1:hover {
+    border: 0px solid #1292e1;
+    background: green;
+    color: white !important;
+    content: "Completed!" !important;
+}
+
+.button1:active {
+    background: #1292e1;
+    color: white;
+    text-decoration: none !important;
+}
 
 .container {
     padding-left: 15px;

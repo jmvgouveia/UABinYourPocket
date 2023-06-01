@@ -3,6 +3,9 @@
 }
 @model LoginModel
 
+
+
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,13 +30,23 @@
         </form>
     </div>
     <div class="form-container sign-in-container">
+
+
         <form method="post" asp-controller="Login" asp-action="EfetuarLogin">
             <h1>Entrar</h1>
             <br />
-        
             <input type="email" placeholder="Email" asp-for="email"/>
             <input type="password" placeholder="Password" asp-for="pw"/>
             <a href="#">Esqueceu a password?</a>
+
+            @if (TempData["AlertMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["AlertMessage"]
+
+                </div>
+
+            }
             <button onclick="location.href='@Url.Action("EfetuarLogin", "Login")'">Entrar</button>
             <br />
             <a class="Button" asp-controller="Home" asp-action="Index" role="button">Voltar</a>

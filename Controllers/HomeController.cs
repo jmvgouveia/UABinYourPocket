@@ -11,12 +11,14 @@ namespace TesteASP.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
+           
+
             _logger = logger;
 
             SQLiteModel.IniciarTabelas();
 
-            SQLiteModel.AdicionarNovoAluno("Daniel", new DateOnly(1993, 1, 21), "Maiorga", "2460-819", 123456789, 911111111, "Portugal", "teste@mail.com");
-            SQLiteModel.AdicionarNovoUtilizador("teste@mail.com", "1212", 1);
+            //SQLiteModel.AdicionarNovoAluno("Daniel", new DateOnly(1993, 1, 21), "Maiorga", "2460-819", 123456789, 911111111, "Portugal", "teste@mail.com");
+            //SQLiteModel.AdicionarNovoUtilizador("teste@mail.com", "1212", 1);
             DataTable dtAux = SQLiteModel.ObterDadosAluno(1);
 
             //Util.Utilizador = null;
@@ -35,6 +37,7 @@ namespace TesteASP.Controllers
 
         public IActionResult Index()
         {
+            
             return View();
         }
 

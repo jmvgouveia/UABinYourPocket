@@ -13,6 +13,7 @@
 
 
 
+
 <div class="landing-page">
     <header>
         <div class="container">
@@ -22,7 +23,28 @@
                 <li><a asp-controller="Home" asp-action="Index">Inicio</a></li>
                 <li><a asp-controller="UnidadesCurriculares" asp-action="UnidadesCurriculares">Unidades Curriculares</a></li>
                 <li> <a asp-controller="Calendario" asp-action="Calendario">Calendário</a></li>
-                <li>Sobre</li>
+                <li>
+                    @if (TempData["User"] != null)
+                    {
+                        @TempData["User"]
+                        TempData.Keep("User");
+                    }
+                    else
+                    {
+                        <button onclick="location.href='@Url.Action("Login", "Login")'">Login</button>
+                    
+                    }
+                </li>
+
+                @*@if (TempData["User"] != null)
+                {
+                        <li>
+                        <button onclick="@TempData.Remove("User")">Logout</button>
+                    </li>
+                        }*@
+
+                
+
             </ul>
 
         </div>
@@ -37,8 +59,10 @@
                     compromissos e anotações de forma simples e eficiente.
                 </p>
                 <br />
-                <button onclick="location.href='@Url.Action("Login", "Login")'">Login</button>
-
+               
+                    @*<button onclick="location.href='@Url.Action("Login", "Login")'">Login</button>*@
+          
+                
             </div>
             <div class="image">
                 <img src="https://cdn.shopify.com/s/files/1/0093/6227/6415/files/02_Fashion-People-Vector-For-Free_1024x1024.png?v=1594027600">
@@ -55,3 +79,4 @@
         </div>
     </div>
 </footer>
+

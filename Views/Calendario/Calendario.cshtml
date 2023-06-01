@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "UABinYourPocket";
 }
-
+@model List<UCModel>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,26 @@
                 <li><a asp-controller="Home" asp-action="Index">Inicio</a></li>
                 <li><a asp-controller="UnidadesCurriculares" asp-action="UnidadesCurriculares">Unidades Curriculares</a></li>
                 <li> <a asp-controller="Calendario" asp-action="Calendario">Calendário</a></li>
-                <li>Sobre</li>
+                <li>
+                    @if (TempData["User"] != null)
+                    {
+                        @TempData["User"]
+                        TempData.Keep("User");
+                    }
+                    else
+                    {
+                    }
+                </li>
+
+              @*  @if (TempData["User"] != null)
+                {
+                    <li>
+                        <button onclick="@TempData.Remove("User")">Logout</button>
+                    </li>
+                }*@
+
+
+
             </ul>
 
         </div>
@@ -33,11 +52,42 @@
     <div class="content">
         <div class="container">
             <ul class="timeline">
-                <li>
-                    <h3>06 Mar - 02 Abr 2023</h3>
-                    <p>eFolio A - Laboratório de Desenvolvimento de Software.</p>
 
-                </li>
+
+                @if (Model != null && Model.Any())
+                {
+                    foreach (UCModel uc in Model)
+                    {
+
+                        <li>
+                            <h3>@uc.Nome</h3>
+                            <p>@uc.EFolioA</p>
+                            <a role="button" class="button" asp-route-id="@uc.ID" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Inscrever</a>
+
+                        </li>
+
+
+
+                    }
+
+                }
+                else
+                {
+
+                    <tr>
+                        <td><strong>Não existe dados na Base de dados.</strong></td>
+                    </tr>
+
+                }
+
+
+
+
+
+
+
+
+              
                 <li>
                     <h3>31 Mar - 17 Abr 2023</h3>
                     <p>eFolio A - Estruturas de Dados e Algoritmos Fundamentais.</p>

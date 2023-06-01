@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "UABinYourPocket";
 }
-
+@model List<UCModel>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,27 +10,6 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/UABinYourPocket.styles.css" asp-append-version="true" />
 </head>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <div class="landing-page">
@@ -43,7 +22,28 @@
                 <li><a asp-controller="Home" asp-action="Index">Inicio</a></li>
                 <li><a asp-controller="UnidadesCurriculares" asp-action="UnidadesCurriculares">Unidades Curriculares</a></li>
                 <li> <a asp-controller="Calendario" asp-action="Calendario">Calendário</a></li>
-                <li>Sobre</li>
+                <li>
+                    @if (TempData["User"] != null)
+                    {
+                        @TempData["User"]
+                        TempData.Keep("User");
+                    }
+                    else
+                    {
+                        <button onclick="location.href='@Url.Action("Login", "Login")'">Login</button>
+
+                    }
+                </li>
+
+              @*  @if (TempData["User"] != null)
+                {
+                    <li>
+                        <button onclick="@TempData.Remove("User")">Logout</button>
+                    </li>
+                }*@
+
+
+
             </ul>
 
         </div>
@@ -51,7 +51,7 @@
     <br />
     <br />
     <br />
-
+   
     <div class="content">
         @*<div class="container">*@
 
@@ -71,52 +71,49 @@
             </thead>
             <tbody>
 
-                <tr>
-                    <th scope="rowgroup">1.ºAno</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (UCModel uc in Model)
+                    {
 
-                <tr>
-                    <th scope="row">1.º Semestre</th>
-                    <td>1.º Ano</td>
-                    <td>21002</td>
-                    <td>Álgebra Linear</td>
-                    <td>6,00</td>
-                    <td>Aprovado</td>
-                    <td>
-<div class="btn-group" role="group" aria-label="Basic example">
-                            <button >Left</button>
-                            <button>Middle</button>
-                            <button>Right</button>
-                        </div>
-                    </td>
-                </tr>
+                        <tr>
+                            <th scope="row">@uc.Semestre</th>
+                            <td>@uc.Ano</td>
+                            <td>@uc.ID</td>
+                            <td>@uc.Nome</td>
+                            <td>@uc.ESCTS</td>
+                            <td>Aprovado</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                   
+                                    @* Verificar se está inscrito se sim edita senao pode inscrever na UC*@
+                                    <a role="button" class="btn btn-primary" asp-route-id="@uc.ID" asp-controller="UnidadesCurriculares" asp-action="Editar">Editar</a>
 
-               
+                                    <a role="button" class="btn btn-primary" asp-route-id="@uc.ID" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Inscrever</a>
+                                   
+                                </div>
+                            </td>
+                        </tr>
 
 
 
-                <tr>
-                    <th scope="row">1.º Semestre</th>
-                    <td>1.º Ano</td>
-                    <td>21002</td>
-                    <td>Álgebra Linear</td>
-                    <td>6,00</td>
-                    <td>Aprovado</td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button>Left</button>
-                            <button>Middle</button>
-                            <button>Right</button>
-                        </div>
-                    </td>
-                </tr>
 
+
+                    }    
+
+                } else
+                {
+                    
+                        <tr>
+                        <td><strong>Não existe dados na Base de dados.</strong></td>
+                        </tr>
+                
+                }
+
+
+                @************************************************************************************@
+                
+           
                 <tr>
                     <th scope="row">1.º Semestre</th>
                     <td>1.º Ano</td>
@@ -126,10 +123,9 @@
                     <td>Aprovado</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button>Left</button>
-                            <button>Middle</button>
-                            <button>Right</button>
-                        </div>
+                            <a role="button" class="button" asp-controller="UnidadesCurriculares" asp-action="Editar">Editar</a> @*asp-route-id="@uc.ID"*@
+                          @*  <button onclick="location.href='@Url.Action("Editar", "UnidadesCurriculares")'">Editar</button>*@
+                         </div>
                     </td>
                 </tr>
 
@@ -139,13 +135,12 @@
                     <td>21002</td>
                     <td>Álgebra Linear</td>
                     <td>6,00</td>
-                    <td>Aprovado</td>
+                    <td>Por Iniciar</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button>Left</button>
-                            <button>Middle</button>
-                            <button>Right</button>
-                        </div>
+                            <a role="button" class="button" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Inscrever</a> @*asp-route-id="@uc.ID"*@
+@*                             <button onclick="location.href='@Url.Action("Inscrever", "UnidadesCurriculares")'">Inscrever</button>
+*@                        </div>
                     </td>
                 </tr>
 
@@ -158,16 +153,53 @@
                     <td>Aprovado</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button>Left</button>
-                            <button>Middle</button>
-                            <button>Right</button>
+                            <a role="button" class="button" asp-controller="UnidadesCurriculares" asp-action="Editar">Editar</a> @*asp-route-id="@uc.ID"*@
                         </div>
                     </td>
                 </tr>
+
+                <tr>
+                    <th scope="row">1.º Semestre</th>
+                    <td>1.º Ano</td>
+                    <td>21002</td>
+                    <td>Álgebra Linear</td>
+                    <td>6,00</td>
+                    <td>Aprovado</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a role="button" class="button" asp-controller="UnidadesCurriculares" asp-action="Editar">Editar</a> @*asp-route-id="@uc.ID"*@
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">1.º Semestre</th>
+                    <td>1.º Ano</td>
+                    <td>21002</td>
+                    <td>Álgebra Linear</td>
+                    <td>6,00</td>
+                    <td>Aprovado</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a role="button" class="button" asp-controller="UnidadesCurriculares" asp-action="Editar">Editar</a> @*asp-route-id="@uc.ID"*@
+                        </div>
+                    </td>
+                </tr>
+
+
+
+
+
+                @************************************************************************************@
+
+
+
+
+
             </tbody>
         </table>
     </div>
-
+</div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
@@ -178,8 +210,4 @@
         </div>
     </footer>
 
-    <!-- Button trigger modal -->
-  @*  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Launch demo modal
-    </button>*@
 

@@ -29,11 +29,17 @@ namespace TesteASP.Controllers
 
             if (!model.EfetuarLogin(email, pw))
             {
+
+
                 //TODO: Adicionar comentário de falha login
-                return View(model);
+              
+                TempData["AlertMessage"] = "Falha no Login!";
+                return RedirectToAction("Login", "Login");
+               //
             }
             else
             {
+                TempData["User"] = email;
                 UtilizadorModel utilizador = new UtilizadorModel();
                 return RedirectToAction("UnidadesCurriculares", "UnidadesCurriculares");
             }
