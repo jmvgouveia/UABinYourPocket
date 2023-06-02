@@ -1,4 +1,6 @@
-﻿namespace TesteASP.Models
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace TesteASP.Models
 {
     public class UtilizadorModel
     {
@@ -7,6 +9,7 @@
         public string? Password { get; set; }
         public int IDAluno { get; set; }
 
+      
         public UtilizadorModel() { } //Controtor sem login efetuado
         public UtilizadorModel(int id, string login, string pw, int idAluno)
         {
@@ -19,6 +22,8 @@
         public static bool VerificarUtilizadorExistente(string login, string pw)
         {
             return SQLiteModel.VerificarLogin(login, pw);
+               
         }
+
     }
 }

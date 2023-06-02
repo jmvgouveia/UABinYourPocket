@@ -13,7 +13,7 @@ namespace TesteASP.Controllers
         {
 
             _logger = logger;
-
+            //TempData["User"] = null;
             SQLiteModel.IniciarTabelas();
 
             //Util.Utilizador = null;

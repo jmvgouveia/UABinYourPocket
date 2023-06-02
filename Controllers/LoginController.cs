@@ -8,6 +8,8 @@ namespace TesteASP.Controllers
     {
         private LoginModel? model;
 
+        private bool sucesso;
+
         public LoginController()
         {
             model = new LoginModel();
@@ -26,29 +28,34 @@ namespace TesteASP.Controllers
         }
 
         [HttpPost]
-        public void EfetuarLogin(string login, string pw)
-        {
-           
-            //if (model is null) return View(model);
-            if (model is null) return;
-
+        public IActionResult EfetuarLogin(string login, string pw)
+        {   
+            if (model is null) return View() ;
+         
             model.VerificarLogin(login, pw);
-            
-        }
 
+            if (sucesso)
+                return RedirectToAction("UnidadesCurriculares", "UnidadesCurriculares");
+            else { 
+                TempData["AlertMessage"] = "Falha no Login!";
+            return RedirectToAction("Login", "Login");
+            }
+
+        }
+        
         public void LoginEfetuado(UtilizadorModel user)
         {
             UtilizadorModel utilizador = user;
             TempData["User"] = user.Login;
-            RedirectToAction("UnidadesCurriculares", "UnidadesCurriculares");
-         
+            
+           sucesso = true;
 
         }
-
-        public void LoginIncorreto()
+        
+        public void  LoginIncorreto()
         {
             TempData["AlertMessage"] = "Falha no Login!";
-            RedirectToAction("Login", "Login");
+            sucesso = false;
         }
     }
 }
