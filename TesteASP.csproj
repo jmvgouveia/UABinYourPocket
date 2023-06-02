@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="PdfSharpCore" Version="1.3.56" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.117" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />

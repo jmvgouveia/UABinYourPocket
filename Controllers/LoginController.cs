@@ -26,13 +26,13 @@ namespace TesteASP.Controllers
         }
 
         [HttpPost]
-        public void EfetuarLogin(string email, string pw)
+        public void EfetuarLogin(string login, string pw)
         {
-            RedirectToAction("UnidadesCurriculares", "UnidadesCurriculares");
+           
             //if (model is null) return View(model);
             if (model is null) return;
 
-            model.VerificarLogin(email, pw);
+            model.VerificarLogin(login, pw);
             
         }
 
@@ -41,6 +41,8 @@ namespace TesteASP.Controllers
             UtilizadorModel utilizador = user;
             TempData["User"] = user.Login;
             RedirectToAction("UnidadesCurriculares", "UnidadesCurriculares");
+         
+
         }
 
         public void LoginIncorreto()

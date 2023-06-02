@@ -87,6 +87,8 @@ namespace TesteASP.Models
             AdicionarAlunosPorDefeito();
             //Adicioanr UCs no início se não existirem
             AdicionarUcsPorDefeito();
+            //Adicioanr UCs no início se não existirem
+            AdicionarUtilizadorPorDefeito();
 
             connection.Close();
         }
@@ -240,6 +242,20 @@ namespace TesteASP.Models
         {
             string insertString = "INSERT OR IGNORE INTO alunos (nome, data_nascimento, morada, codigo_postal, nif, contacto, pais, email) " +
                                         $"VALUES('{nome}', '{data_nascimento:yyyy-MM-dd}', '{morada}', '{codPostal}', {nif}, {contacto}, '{pais}', '{email}');";
+
+            using var connection = new SQLiteConnection(ConnectionString);
+
+            connection.Open();
+
+            InserirDados(connection, insertString);
+
+            connection.Close();
+        }
+
+        public static void AdicionarUtilizadorPorDefeito()
+        {
+            string insertString = "INSERT OR IGNORE INTO utilizadores (id_aluno, login, password) " +
+                                        $"VALUES(1,'teste@mail.com','1212');";
 
             using var connection = new SQLiteConnection(ConnectionString);
 
