@@ -28,8 +28,21 @@
                         @TempData["User"]
                         TempData.Keep("User");
                     }
-                   
+                    else
+                    {
+                        <a role="button" asp-controller="Login" asp-action="Login">Login</a>
+
+                    }
                 </li>
+
+                @*  @if (TempData["User"] != null)
+                {
+                <li>
+                <button onclick="@TempData.Remove("User")">Logout</button>
+                </li>
+                }*@
+
+
 
             </ul>
 
@@ -38,24 +51,14 @@
     <br />
     <br />
     <br />
+
+    <h2>Calendario</h2>
+    <div style="display: flex; justify-content:flex-end">
+        <a role="button1" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Editar"><img src="~/images/pdfblue.png" width="30" /></a>
+    </div>
     <div class="content">
-        <table class="table">
-            <tr>
-                <th scope="col"><h2>A tua TimeLine</h2></th>
-                <th scope="col">
-                    <a role="button">
-                        Exportar PDF
-                        <img src="~/images/pdfblue.png" width="30" />
-                    </a>
-                </th>
 
-            </tr>
-        </table>
         <div class="container">
-
-
-          
-
             <ul class="timeline">
 
 
@@ -96,70 +99,87 @@
                 <li>
                     <h3>31 Mar - 17 Abr 2023</h3>
                     <p>eFolio A - Estruturas de Dados e Algoritmos Fundamentais.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2003</h3>
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2004</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2005</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2006</h3>
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2007</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2008</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2009</h3>
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2010</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2011</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2012</h3>
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2013</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2014</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2015</h3>
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2016</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2017</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
                 <li>
                     <h3>2018</h3>
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a role="button" class="button" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Inscrever">Editar</a>
                 </li>
             </ul>
         </div>

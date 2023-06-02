@@ -28,10 +28,12 @@ namespace TesteASP.Controllers
         [HttpPost]
         public void EfetuarLogin(string email, string pw)
         {
+            RedirectToAction("UnidadesCurriculares", "UnidadesCurriculares");
             //if (model is null) return View(model);
             if (model is null) return;
 
-            model.VerificarLogin(email, pw); 
+            model.VerificarLogin(email, pw);
+            
         }
 
         public void LoginEfetuado(UtilizadorModel user)

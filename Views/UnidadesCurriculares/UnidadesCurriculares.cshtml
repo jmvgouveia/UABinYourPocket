@@ -30,7 +30,7 @@
                     }
                     else
                     {
-                        <button onclick="location.href='@Url.Action("Login", "Login")'">Login</button>
+                        <a role="button" asp-controller="Login" asp-action="Login">Login</a>
 
                     }
                 </li>
@@ -56,21 +56,13 @@
         @*<div class="container">*@
 
 
-        <table class="table">
-            <tr>
-                <th scope="col"><h2>Unidades Curriculares</h2></th>
-                <th scope="col">
-                    <a role="button">
-                        Exportar PDF
-                        <img src="~/images/pdfblue.png" width="30" />
-                    </a>
-                </th>
+        <h2>Unidades Curriculares</h2>
 
-            </tr>
-        </table>
-       
-        
-        
+        <div style="display: flex; justify-content:flex-end">
+            <a role="button1" asp-route-id="" asp-controller="UnidadesCurriculares" asp-action="Editar"><img src="~/images/pdfblue.png" width="30" /></a>
+        </div>
+
+
         <table class="table">
             <thead>
                 <tr>

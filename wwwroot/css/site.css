@@ -52,6 +52,34 @@ button {
     background-color: #00b4d8;
 }
 
+[role=button] {
+    border: 0;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-left: 10px;
+    margin-top: 0px;
+    cursor: pointer;
+    color: #FFF;
+    text-align:center;
+    background-color: #00b4d8;
+    width:125px;
+}
+
+
+[role=buttonT] {
+    border: 0;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-left: 10px;
+    margin-top: 0px;
+    cursor: pointer;
+    color: #FFF;
+    text-align: center;
+    background-color: transparent;
+    width: 125px;
+}
+
+
 button1 {
     border: 0;
     border-radius: 20px;
