@@ -73,6 +73,21 @@ namespace TesteASP.Models
                                                               "UNIQUE(nome));";
             CriarTabela(connection, sqlTabUC);
 
+            string sqlTabAlunoUC = "CREATE TABLE IF NOT EXISTS aluno_uc (id_aluno INTEGER NOT NULL, " +
+                                                                        "id_uc INTEGER NOT NULL," +
+                                                                        "CONSTRAINT fk_aluno_uc_aluno FOREIGN KEY (id_aluno) " +
+                                                                        "REFERENCES alunos (id) ON DELETE CASCADE ON UPDATE NO ACTION, " +
+                                                                        "CONSTRAINT fk_aluno_uc_uc FOREIGN KEY (id_uc) " +
+                                                                        "REFERENCES ucs (id) ON DELETE CASCADE ON UPDATE NO ACTION," +
+                                                                        "PRIMARY KEY (id_aluno, id_uc))";
+            CriarTabela(connection, sqlTabAlunoUC);
+
+
+            //Adicionar alunos no início se não existirem
+            AdicionarAlunosPorDefeito();
+            //Adicioanr UCs no início se não existirem
+            AdicionarUcsPorDefeito();
+
             connection.Close();
         }
 
@@ -163,6 +178,15 @@ namespace TesteASP.Models
             return dtAux;
         }
 
+        /// <summary>
+        /// Verificar se login e password inseridos correspondem a um Utilizador existente
+        /// </summary>
+        /// <param name="login">Login a verificar</param>
+        /// <param name="pw">Password a verificar</param>
+        /// <returns>
+        /// True: Existe
+        /// False: Não existe
+        /// </returns>
         public static bool VerificarLogin(string login, string pw)
         {
             string sql = $"SELECT " +
@@ -190,6 +214,26 @@ namespace TesteASP.Models
         #endregion
 
         #region Métodos & Funções da Tabela Alunos
+
+        private static void AdicionarAlunosPorDefeito()
+        {
+            AdicionarNovoAluno("Bruno", new DateOnly(1993, 1, 21), "Lisboa", "1234-123", 123789456, 918765432, "Portugal", "teste@mail.com");
+            AdicionarNovoAluno("Daniel", new DateOnly(1993, 1, 21), "Alcobaça", "2460-557", 123456789, 911111111, "Portugal", "teste@mail.com");
+            AdicionarNovoAluno("Jorge", new DateOnly(1993, 1, 21), "Funchal", "4321-987", 987654321, 912345678, "Portugal", "teste@mail.com");
+            AdicionarNovoAluno("Sara", new DateOnly(1993, 1, 21), "Leiria", "9874-123", 123789456, 918765432, "Portugal", "teste@mail.com");
+        }
+
+        /// <summary>
+        /// Adicionar um novo aluno
+        /// </summary>
+        /// <param name="nome">Nome</param>
+        /// <param name="data_nascimento">Data de nascimento</param>
+        /// <param name="morada">Morada</param>
+        /// <param name="codPostal">Código-Postal</param>
+        /// <param name="nif">NIF</param>
+        /// <param name="contacto">Contacto</param>
+        /// <param name="pais">País</param>
+        /// <param name="email">E-mail</param>
         public static void AdicionarNovoAluno(string nome, DateOnly data_nascimento, 
                                               string morada, string codPostal, 
                                               int nif, int contacto, string pais, string email)
@@ -223,7 +267,74 @@ namespace TesteASP.Models
 
         #endregion
 
+        #region Métodos & Funções da Tabela UCs
 
-        
+        private static void AdicionarUcsPorDefeito()
+        {
+            
+
+            AdicionarNovaUC("Linguagens de Programação", "LP", 6, 2, 2, new DateTime(2023,4,17,23,59,0), 
+                            new DateTime(2023,4,15,23,59,0), new DateTime(2023,6,16,10,0,0));
+
+            AdicionarNovaUC("Introdução à Inteligência Artificial", "IIA", 6, 2, 2, new DateTime(2023,4,17,23,59,0),
+                            new DateTime(2023,5,22,23,59,0), new DateTime(2023,6,12,15,0,0));
+
+            AdicionarNovaUC("Laboratório de Desenvolvimento de Software", "LDS", 6, 2, 2, new DateTime(2023,4,17,23,59,0),
+                            new DateTime(2023,5,22,23,59,0), new DateTime(2023,6,12,15,0,0));
+        }
+
+        public static void AdicionarNovaUC(string nome, string sigla, short escts, 
+                                           short ano, short semestre, DateTime efolioA, 
+                                           DateTime efolioB, DateTime efolioGlobal)
+        {
+            string insertString = "INSERT OR IGNORE INTO ucs (nome, sigla, escts, ano, semestre, efolio_a, efolio_b, efolio_global) " +
+                                        $"VALUES('{nome}', '{sigla}', {escts}, {ano}, {semestre}, " +
+                                               $"'{efolioA:yyyy-MM-dd HH:mm:ss}', '{efolioB:yyyy-MM-dd HH:mm:ss}', '{efolioGlobal:yyyy-MM-dd HH:mm:ss}');";
+
+            using var connection = new SQLiteConnection(ConnectionString);
+
+            connection.Open();
+
+            InserirDados(connection, insertString);
+
+            connection.Close();
+        }
+
+        /// <summary>
+        /// Obter todas as UCs
+        /// </summary>
+        /// <returns>Datatable com todas as UCs</returns>
+        public static DataTable ObterUCs()
+        {
+            string readString = $"SELECT * FROM ucs";
+
+            using var connection = new SQLiteConnection(ConnectionString);
+
+            connection.Open();
+
+            DataTable dtAux = LerDados(connection, readString);
+
+            connection.Close();
+
+            return dtAux;
+        }
+        #endregion
+
+        #region Métodos & Funções da Tabela Aluno_UC
+
+        public static void InscreverAlunoUC(int idAluno, int idUc)
+        {
+            string insertString = $"INSERT INTO aluno_uc (id_aluno, id_uc) VALUES('{idAluno}', '{idUc}');";
+
+            using var connection = new SQLiteConnection(ConnectionString);
+
+            connection.Open();
+
+            InserirDados(connection, insertString);
+
+            connection.Close();
+        }
+
+        #endregion
     }
 }

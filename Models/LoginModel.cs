@@ -5,30 +5,43 @@ namespace TesteASP.Models
 {
     public class LoginModel
     {
-        public delegate void Login(object sender, UtilizadorModel utilizador);
-        public event Login? LoginEfetuado;
+        public delegate void LoginCheck(UtilizadorModel utilizador);
+        public delegate void LoginUncheck();
 
-        public string email { get; set; }
+        public event LoginCheck? LoginEfetuado;
+        public event LoginUncheck? LoginIncorreto;
+
+        public string login { get; set; }
         public string pw { get; set; }
 
         public LoginModel()
         {
-            this.email = "";
+            this.login = "";
             this.pw = "";
         }
 
-        public bool EfetuarLogin(string email, string pw)
+        public void VerificarLogin(string login, string pw)
         {
-            return SQLiteModel.VerificarLogin(email, pw);
+            if (UtilizadorModel.VerificarUtilizadorExistente(login, pw))
+            {
+                //obter id de utilizador e id de aluno associado
+                //TODO: acabar
+                int id = 0;
 
-            //se login se verificar
+                OnLoginEfetuado(new UtilizadorModel(id, login, pw, 0));
+            }
+            else
+                OnLoginIncorreto();
+        }
 
+        protected virtual void OnLoginEfetuado(UtilizadorModel utilizador)
+        {
+            LoginEfetuado?.Invoke(utilizador);
+        }
 
-            //criar objecto Utilizador
-            
-
-            //if (LoginEfetuado != null)
-                //LoginEfetuado(this, new UtilizadorModel());
+        protected virtual void OnLoginIncorreto()
+        {
+            LoginIncorreto?.Invoke();
         }
     }
 }

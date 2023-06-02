@@ -35,7 +35,7 @@
         <form method="post" asp-controller="Login" asp-action="EfetuarLogin">
             <h1>Entrar</h1>
             <br />
-            <input type="email" placeholder="Email" asp-for="email"/>
+            <input type="email" placeholder="Email" asp-for="login"/>
             <input type="password" placeholder="Password" asp-for="pw"/>
             <a href="#">Esqueceu a password?</a>
 
@@ -47,7 +47,7 @@
                 </div>
 
             }
-            <button onclick="location.href='@Url.Action("EfetuarLogin", "Login")'">Entrar</button>
+            <button onclick="location.href='@Url.Action("UnidadesCurriculares", "UnidadesCurriculares")'">Entrar</button>
             <br />
             <a class="Button" asp-controller="Home" asp-action="Index" role="button">Voltar</a>
         </form>

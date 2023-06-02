@@ -28,19 +28,8 @@
                         @TempData["User"]
                         TempData.Keep("User");
                     }
-                    else
-                    {
-                    }
+                   
                 </li>
-
-              @*  @if (TempData["User"] != null)
-                {
-                    <li>
-                        <button onclick="@TempData.Remove("User")">Logout</button>
-                    </li>
-                }*@
-
-
 
             </ul>
 
@@ -50,7 +39,23 @@
     <br />
     <br />
     <div class="content">
+        <table class="table">
+            <tr>
+                <th scope="col"><h2>A tua TimeLine</h2></th>
+                <th scope="col">
+                    <a role="button">
+                        Exportar PDF
+                        <img src="~/images/pdfblue.png" width="30" />
+                    </a>
+                </th>
+
+            </tr>
+        </table>
         <div class="container">
+
+
+          
+
             <ul class="timeline">
 
 

@@ -1,21 +1,24 @@
 ﻿namespace TesteASP.Models
 {
-    public class UtilizadorModel : AlunoModel
+    public class UtilizadorModel
     {
         public int? IDUtilizador { get; set; }
         public string? Login { get; set; }
         public string? Password { get; set; }
         public int IDAluno { get; set; }
 
-        public UtilizadorModel() : base() { }
-
-        public UtilizadorModel(int id, string nome, DateOnly dataNascimento, string morada, 
-                               string codPostal, int nif, int contacto, string pais, string email, 
-                               int idUtilizador, string login, string password) : base(id, nome, dataNascimento, morada, codPostal, nif, contacto, pais, email)
+        public UtilizadorModel() { } //Controtor sem login efetuado
+        public UtilizadorModel(int id, string login, string pw, int idAluno)
         {
-            this.IDUtilizador = idUtilizador;
+            this.IDUtilizador = id;
             this.Login = login;
-            this.Password = password;
+            this.Password = pw;
+            this.IDAluno = idAluno;
+        }
+
+        public static bool VerificarUtilizadorExistente(string login, string pw)
+        {
+            return SQLiteModel.VerificarLogin(login, pw);
         }
     }
 }

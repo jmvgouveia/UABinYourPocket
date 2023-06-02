@@ -9,61 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TesteASP
 build_property.RootNamespace = TesteASP
-build_property.ProjectDir = C:\Users\Windows\Source\Repos\novobranch\
+build_property.ProjectDir = C:\Users\j.gouveia\source\repos\UABinYourPocket\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Windows\Source\Repos\novobranch
+build_property.MSBuildProjectDirectory = C:\Users\j.gouveia\source\repos\UABinYourPocket
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/Calendario/Calendario.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/Calendario/Calendario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsZW5kYXJpb1xDYWxlbmRhcmlvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/Home/Index.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/Home/Privacy.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/Login/ErrorLogin.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/Login/ErrorLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cRXJyb3JMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/Login/Login.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/Shared/Error.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/UnidadesCurriculares/Editar.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/UnidadesCurriculares/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pZGFkZXNDdXJyaWN1bGFyZXNcRWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/UnidadesCurriculares/Inscrever.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/UnidadesCurriculares/Inscrever.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pZGFkZXNDdXJyaWN1bGFyZXNcSW5zY3JldmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/UnidadesCurriculares/UnidadesCurriculares.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/UnidadesCurriculares/UnidadesCurriculares.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pZGFkZXNDdXJyaWN1bGFyZXNcVW5pZGFkZXNDdXJyaWN1bGFyZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/_ViewImports.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/_ViewStart.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Windows/Source/Repos/novobranch/Views/Shared/_Layout.cshtml]
+[C:/Users/j.gouveia/source/repos/UABinYourPocket/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-t36t4pr9eq

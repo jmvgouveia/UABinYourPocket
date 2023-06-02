@@ -14,7 +14,10 @@ namespace TesteASP.Controllers
             //view = new LoginView();
 
             if (model != null)
-                model.LoginEfetuado += ExecutarVerificacaoLogin;
+            {
+                model.LoginEfetuado += LoginEfetuado;
+                model.LoginIncorreto += LoginIncorreto;
+            }
         }
 
         public IActionResult Login()
@@ -23,32 +26,25 @@ namespace TesteASP.Controllers
         }
 
         [HttpPost]
-        public ActionResult EfetuarLogin(string email, string pw)
+        public void EfetuarLogin(string email, string pw)
         {
-            if (model is null) return View(model);
+            //if (model is null) return View(model);
+            if (model is null) return;
 
-            if (!model.EfetuarLogin(email, pw))
-            {
-
-
-                //TODO: Adicionar comentário de falha login
-              
-                TempData["AlertMessage"] = "Falha no Login!";
-                return RedirectToAction("Login", "Login");
-               //
-            }
-            else
-            {
-                TempData["User"] = email;
-                UtilizadorModel utilizador = new UtilizadorModel();
-                return RedirectToAction("UnidadesCurriculares", "UnidadesCurriculares");
-            }
-                
+            model.VerificarLogin(email, pw); 
         }
 
-        public void ExecutarVerificacaoLogin(object sender, UtilizadorModel utilizador)
+        public void LoginEfetuado(UtilizadorModel user)
         {
-            
+            UtilizadorModel utilizador = user;
+            TempData["User"] = user.Login;
+            RedirectToAction("UnidadesCurriculares", "UnidadesCurriculares");
+        }
+
+        public void LoginIncorreto()
+        {
+            TempData["AlertMessage"] = "Falha no Login!";
+            RedirectToAction("Login", "Login");
         }
     }
 }
