@@ -57,12 +57,14 @@ button {
     border-radius: 20px;
     padding: 10px 30px;
     margin-left: 10px;
+    margin-right: 10px;
     margin-top: 0px;
     cursor: pointer;
     color: #FFF;
-    text-align:center;
+    text-align: center;
     background-color: #00b4d8;
-    width:125px;
+    width: 125px;
+  
 }
 
 

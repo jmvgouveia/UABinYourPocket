@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
+using System.Data;
 
 namespace TesteASP.Models
 {
@@ -25,11 +26,11 @@ namespace TesteASP.Models
         {
             if (UtilizadorModel.VerificarUtilizadorExistente(login, pw))
             {
-                //obter id de utilizador e id de aluno associado
-                //TODO: acabar
-                int id = 0;
+                DataTable dtUtil = SQLiteModel.ObterDadosUtilizadorLogin(login, pw);
 
-                OnLoginEfetuado(new UtilizadorModel(id, login, pw, 0));
+                DataRow util = dtUtil.Rows[0];
+
+                OnLoginEfetuado(new UtilizadorModel(Convert.ToInt32(util["id"]), (string)util["login"], (string)util["password"], Convert.ToInt32(util["id_aluno"])));
             }
             else
                 OnLoginIncorreto();

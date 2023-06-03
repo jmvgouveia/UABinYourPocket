@@ -45,10 +45,10 @@ namespace TesteASP.Controllers
         
         public void LoginEfetuado(UtilizadorModel user)
         {
-            UtilizadorModel utilizador = user;
-            TempData["User"] = user.Login;
-            
-           sucesso = true;
+            UtilizadorLogin.utilizador = user;
+
+            TempData["User"] = SQLiteModel.ObterNomeUtilizador(user.IDAluno);
+            sucesso = true;
 
         }
         

@@ -180,6 +180,56 @@ namespace TesteASP.Models
             return dtAux;
         }
 
+
+        /// <summary>
+        /// Obter nome do Utilizador
+        /// </summary>
+        /// <param name="idAluno">ID do Aluno</param>
+        /// <returns>Nome do Utilizador</returns>
+        public static string ObterNomeUtilizador(int idAluno)
+        {
+            string sql = $"SELECT nome FROM alunos WHERE id = {idAluno}";
+            using var connection = new SQLiteConnection(ConnectionString);
+
+            connection.Open();
+
+            SQLiteCommand cmd;
+
+            cmd = connection.CreateCommand();
+            cmd.CommandText = sql;
+
+            var resultado = cmd.ExecuteScalar();
+            string nome = resultado == null ? "" : (string)resultado;
+
+            connection.Close();
+
+            return nome;
+        }
+
+
+        /// <summary>
+        /// Obter dados de Utilizador que efetuou login
+        /// </summary>
+        /// <param name="login">Login</param>
+        /// <param name="password">Password</param>
+        /// <returns>Dados de Utilizador</returns>
+        public static DataTable ObterDadosUtilizadorLogin(string login, string password)
+        {
+            string readString = $"SELECT * FROM utilizadores WHERE login = '{login}' AND password = '{password}'";
+
+            using var connection = new SQLiteConnection(ConnectionString);
+
+            connection.Open();
+
+            DataTable dtAux = LerDados(connection, readString);
+
+            connection.Close();
+
+            return dtAux;
+        }
+
+
+
         /// <summary>
         /// Verificar se login e password inseridos correspondem a um Utilizador existente
         /// </summary>

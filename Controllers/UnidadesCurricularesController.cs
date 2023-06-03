@@ -9,29 +9,15 @@ namespace TesteASP.Controllers
     {
         private UnidadesCurricularesModel? model;
 
-        private ObservableCollection<UCModel> colecaoUcs;
-
         public UnidadesCurricularesController()
         {
             this.model = new UnidadesCurricularesModel();
-            this.colecaoUcs = new ObservableCollection<UCModel>();
-            //obter UCs
-            DataTable dtAux = SQLiteModel.ObterUCs();
-
-            foreach (DataRow row in dtAux.Rows)
-            {
-                //colecaoUcs.Add(new UCModel((int)row["id"], (string)row["nome"], (string)row["sigla"], 
-                //                           (int)row["escts"], (int)row["ano"], (int)row["semestre"], 
-                //                           (DateTime)row["efolio_a"], (DateTime)row["efolio_b"], (DateTime)row["efolio_global"]));
-            }
-
-            var teste = 0; //break para testar como se encontra a coleção
+           
         }
-
 
         public IActionResult UnidadesCurriculares()
         {
-            return View();
+            return View(model.colecaoUcs);
         }
         public IActionResult Inscrever()
         {
@@ -42,5 +28,10 @@ namespace TesteASP.Controllers
             return View();
         }
 
+
+        public IActionResult GerarPDF()
+        {
+            return PDFModel.GerarDocumentoUCs(model.colecaoUcs, UtilizadorLogin.utilizador == null ? "Sem Login" : SQLiteModel.ObterNomeUtilizador(UtilizadorLogin.utilizador.IDAluno));
+        }
     }
 }
